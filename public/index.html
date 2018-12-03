@@ -29,7 +29,7 @@
 
 </head>
 
-<body ng-app="siddhu" ng-controller="mainController as mc">
+<body ng-app="mainApp" ng-controller="mainController as mc">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -40,7 +40,7 @@
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#">MEAN Blog</a>
+                <a class="navbar-brand" href="#">LOGO</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -49,14 +49,9 @@
                     <li>
                         <a href="#">Home</a>
                     </li>
-                    <li>
-                        <a href="#!/about">About</a>
-                    </li>
                      <li ng-show="!login">
-                        <a href="#!/admin">Login/Signup</a>
+                        <a href="#!/admin">Login</a>
                     </li>
-                    <li ng-show="login"><a href="#!/new">New Article</a></li>
-                    <li ng-show="login"><a href="#!/articles">Articles</a></li>
                     <li ng-show="login"><a href="#" ng-click="mc.logout()">logout</a></li>
                 </ul>
             </div>
@@ -64,23 +59,6 @@
         </div>
         <!-- /.container -->
     </nav>
-
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('img/home-bg.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>RapidBizApps</h1>
-                        <hr class="small">
-                        <span class="subheading" ng-show="login">NodeJS,Express,Angular & Mongo Blog by {{data.userData.name}}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
     <!-- Main Content -->
     <div class="container">
          <div ng-view></div>  
@@ -119,7 +97,6 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">Copyright &copy; <a href="http://siddhu.info">Siddhu Vydyabhushana</a></p>
                 </div>
             </div>
         </div>
@@ -129,16 +106,9 @@
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="js/script.js"></script>
-    <script src="controllers/auth/signupController.js"></script>
     <script src="controllers/auth/loginController.js"></script>
-    <script src="controllers/article/articleController.js"></script>
     <script src="controllers/home/homeController.js"></script>
-    <script src="controllers/home/singleController.js"></script>
-    <script src="controllers/home/ownController.js"></script>
-    <script src="controllers/home/editController.js"></script>
     <script src="services/postService.js"></script>
-  
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/trix/0.9.2/trix.js"></script>
-</body>
+  </body>
 
 </html>

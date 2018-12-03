@@ -1,11 +1,11 @@
-const angularApp=angular.module('siddhu',['ngRoute','homeController','editController','ownController','singleController','signupController','loginController','articleController','postServices']);
+const angularApp=angular.module('mainApp',['ngRoute','homeController','loginController']);
 
 angularApp.config(['$routeProvider',(a)=>{
 
 a.when('/',{
     templateUrl:'./partials/home.html',
     controller:'homeController as hc',
-    title:'Rapid Biz Apps Blog Task | MEAN BLOG'
+    title:'Front End Coding Challenge'
 }).
 when('/about',{
     template:'<a href="#"><-</a><p>Freelance Full Stack Web Developer, Augmented Reality Expert, Java Programmer</p>',
@@ -14,33 +14,7 @@ when('/about',{
 when('/admin',{
     templateUrl:'./partials/login.html',
     controller:'loginController as lc',
-    title:'Blog Login'
-}).
-when('/signup',{
-    templateUrl:'./partials/signup.html',
-    controller:'signupController as sc',
-     title:'Blog Registration'
-}).
-when('/new',{
-    templateUrl:'./partials/newArticle.html',
-    controller:'articleController as ac',
-    title:'Publish New Article'
-
-}).
-when('/articles',{
-    templateUrl:'./partials/articles.html',
-    controller:'ownController as oc',
-    title:'Rapidbizapps Blog Articles'
-}).
-when('/:id/:title',{
-    templateUrl:'./partials/singlePost.html',
-    controller:'singleController as sc',
-     title:'Rapidbizapps single page'
-}).
-when('/article/edit/:id',{
-    templateUrl:'./partials/editArticle.html',
-    controller:'editController as ec',
-     title:'Rapidbizapps Edit page'
+    title:'Login Page'
 });
 
 }]);
